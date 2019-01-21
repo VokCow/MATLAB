@@ -1,4 +1,4 @@
-# MATLAB-Image_Processing-Filters_FrequencyDomain
+# MATLAB/image_Processing/Filterin_1
 
 These scripts are only aiming to show how the Fourier Transform works when applied to images. First step is to turn the image into a 
 grayscale image so it is depicted only by a 2D matrix (instead of 3 in the colour case). Now, we can apply to each element of this 

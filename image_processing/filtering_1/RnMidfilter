@@ -1,0 +1,19 @@
+function [midF, inmidF] = RnMidfilter(I,R1,R2)
+
+% This function takes an image (I) and the desireded mask size as inputs, gets
+% image size from I and returns the desired mask binary image. The mask is
+% described as R1<sqrt(x^2+y^2)<R2.
+
+[rows, cols] = size(I);
+aux = zeros(rows,cols);
+midF = zeros(rows,cols);
+aux(floor(rows/2),floor(cols/2)) = 1;
+midF(floor(rows/2),floor(cols/2)) = 1;
+aux = bwdist(aux)<=R2;
+midF = imcomplement(bwdist(midF)<=R1);
+midF = aux.*midF;
+inmidF = imcomplement(midF);
+
+
+
+end
